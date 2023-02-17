@@ -62,3 +62,6 @@ prefabs.json
 .vscode/*.*
 *.js
 *.sym
+pokefirered_rev1.toml
+.github/calcrom/calcrom.pl
+.github/calcrom/webhook.sh
