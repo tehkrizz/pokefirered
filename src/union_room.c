@@ -1176,7 +1176,7 @@ static u32 IsTryingToTradeAcrossVersionTooSoon(struct WirelessLink_Group * data,
     {
         if (!(gSaveBlock2Ptr->specialSaveWarpFlags & CHAMPION_SAVEWARP))
             return UR_TRADE_PLAYER_NOT_READY;
-        else if (partner->rfu.data.compatibility.canLinkNationally)
+        else if (partner->rfu.data.compatibility.isChampion)
             return UR_TRADE_READY;
     }
     else

@@ -2,7 +2,6 @@ TILESETGFXDIR := data/tilesets
 FONTGFXDIR := graphics/fonts
 FAMECHECKERGFXDIR := graphics/fame_checker
 INTERFACEGFXDIR := graphics/interface
-PARTYMENUGFXDIR := graphics/party_menu
 BTLANMSPRGFXDIR := graphics/battle_anims/sprites
 UNUSEDGFXDIR := graphics/unused
 UNKNOWNGFXDIR := graphics/unknown
@@ -18,6 +17,7 @@ EVENTOBJGFXDIR := graphics/object_events
 FIELDEFFECTSGFXDIR := graphics/field_effects
 MISCGFXDIR := graphics/misc
 TEXTWINDOWGFXDIR := graphics/text_window
+SLOTMACHINEGFXDIR := graphics/slot_machine
 TEACHYTVGFXDIR := graphics/teachy_tv
 SSANNEGFXDIR := graphics/ss_anne
 ITEMPCGFXDIR := graphics/item_pc
@@ -199,7 +199,7 @@ $(MASKSGFXDIR)/unknown_D2EC24.4bpp: %.4bpp: %.png
 $(BATTRANSGFXDIR)/vs_frame.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 16 -Wnum_tiles
 
-$(PARTYMENUGFXDIR)/bg.4bpp: %.4bpp: %.png
+$(INTERFACEGFXDIR)/party_menu_misc.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 62 -Wnum_tiles
 
 $(TYPESGFXDIR)/move_types.4bpp: $(types:%=$(TYPESGFXDIR)/%.4bpp) $(contest_types:%=$(TYPESGFXDIR)/contest_%.4bpp)
@@ -243,6 +243,10 @@ $(ROULETTEGFXDIR)/poke_icons2.4bpp: $(ROULETTEGFXDIR)/wynaut.4bpp \
 									$(ROULETTEGFXDIR)/azurill.4bpp \
 									$(ROULETTEGFXDIR)/skitty.4bpp \
 									$(ROULETTEGFXDIR)/makuhita.4bpp
+	@cat $^ >$@
+
+$(SLOTMACHINEGFXDIR)/reel_time_gfx.4bpp: $(SLOTMACHINEGFXDIR)/reel_time_pikachu.4bpp \
+										 $(SLOTMACHINEGFXDIR)/reel_time_machine.4bpp
 	@cat $^ >$@
 
 $(UNUSEDGFXDIR)/intro_birch_beauty.4bpp: %.4bpp: %.png
@@ -458,14 +462,11 @@ graphics/link/321start.4bpp: %.4bpp: %.png
 $(TEXTWINDOWGFXDIR)/signpost.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 19 -Wnum_tiles
 
-$(SLOTMACHINEGFXDIR)/firered/combos_window.4bpp: %.4bpp: %.png
+$(SLOTMACHINEGFXDIR)/unk_8466620.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 66 -Wnum_tiles
 
-$(SLOTMACHINEGFXDIR)/firered/bg.4bpp: %.4bpp: %.png
+$(SLOTMACHINEGFXDIR)/unk_84659d0.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 138 -Wnum_tiles
-
-$(SLOTMACHINEGFXDIR)/leafgreen/bg.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 134 -Wnum_tiles
 
 $(TEACHYTVGFXDIR)/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 233 -Wnum_tiles
@@ -481,6 +482,9 @@ $(TITLESCREENGFXDIR)/firered/box_art_mon.4bpp: %.4bpp: %.png
 
 $(TITLESCREENGFXDIR)/leafgreen/box_art_mon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 123 -Wnum_tiles
+
+$(CREDITSGFXDIR)/unk_8EAE548.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 77 -Wnum_tiles
 
 POKEDEXAREAMARKERSDATADIR := graphics/pokedex/area_markers
 
